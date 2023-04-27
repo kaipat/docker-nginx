@@ -6,4 +6,4 @@ services:
     ports:
       - "80:80"
     volumes:
-      - /Users/jiapeng/Code/vue2-demo/dist:/usr/share/nginx/html
+      - /Users/jiapeng/Code/nginx/public:/usr/share/nginx/html
