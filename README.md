@@ -4,5 +4,5 @@
 ## How to use
 
 ```bash
-make
+make serve
 ```
