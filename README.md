@@ -5,7 +5,9 @@
 1. 修改`Makefile`公共资源文件夹映射路径
    ```base
     # Makefile
-    docker run -d -p 80:80 --volume [your public folder path]:/public --name $(APP) $(APP):latest
+    # CURRENT_DIR 当前目录地址，带`/`
+    # FROM 本地公开的目录
+    # TO 容器内公开的目录
     ```
 
 2. 生成镜像并运行容器
