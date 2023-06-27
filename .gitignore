@@ -1,6 +1,8 @@
 .DS_Store
 .idea
-public
+
+public/*
+!public/index.html
 
 # IDE - VSCode
 .vscode/*
