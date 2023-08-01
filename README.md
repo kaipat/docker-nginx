@@ -1,20 +1,10 @@
-# Docker run nginx
+# Docker Nginx
 
 
 ## How to use
-1. 修改`Makefile`公共资源文件夹映射路径
-   ```base
-    # Makefile
-    # CURRENT_DIR 当前目录地址，带`/`
-    # FROM 本地公开的目录
-    # TO 容器内公开的目录
-    ```
-
-2. 生成镜像并运行容器
-    ```bash
-    make serve
-    ```
-
+```bash
+  make serve
+```
 
 ## Useful command
 

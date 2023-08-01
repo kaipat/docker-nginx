@@ -1,12 +1,14 @@
-APP=docker-nginx
-CURRENT_DIR=$(dir $(abspath $(lastword $(MAKEFILE_LIST))))
-FROM=$(CURRENT_DIR)public
-TO=/public
+LOG_DIR=~/Desktop/logs
+CURRENT_DIR_NAME := $(shell basename "$(CURDIR)")
+IMAGE=$(CURRENT_DIR_NAME):development
+CONTAINER=$(CURRENT_DIR_NAME).development
+HOST_PUBLIC_DIR=$(CURDIR)public
+CONTAINER_PUBLIC_DIR=/public
 
 serve:
-	docker build -t $(APP) .
-	docker stop $(APP) || true
-	docker rm $(APP) -f || true
-	docker run -d --volume ~/Code/logs/nginx:/var/log/nginx -p 80:80 --volume $(FROM):$(TO) --name $(APP) $(APP):latest
+	docker build -t $(IMAGE) .
+	docker stop $(CONTAINER) || true
+	docker rm $(CONTAINER) -f || true
+	docker run -d --volume $(LOG_DIR)/$(CONTAINER):/var/log/nginx -p 80:80 --volume $(HOST_PUBLIC_DIR):$(CONTAINER_PUBLIC_DIR) --name $(CONTAINER) $(IMAGE)
 	docker container prune -f
 	docker image prune -a -f
