@@ -1,5 +1,5 @@
 LOG_DIR=~/Desktop/logs
-CURRENT_DIR_NAME := $(shell basename "$(CURDIR)")
+CURRENT_DIR_NAME=$(shell basename "$(CURDIR)")
 IMAGE=$(CURRENT_DIR_NAME):development
 CONTAINER=$(CURRENT_DIR_NAME).development
 HOST_PUBLIC_DIR=$(CURDIR)/public
