@@ -6,6 +6,7 @@ HOST_PUBLIC_DIR=$(CURDIR)/public
 CONTAINER_PUBLIC_DIR=/public
 
 serve:
+	rm -rf logs
 	docker build -t $(IMAGE) .
 	docker stop $(CONTAINER) || true
 	docker rm $(CONTAINER) -f || true
