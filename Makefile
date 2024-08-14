@@ -2,7 +2,7 @@ LOG_DIR=$(CURDIR)/logs
 CURRENT_DIR_NAME=$(shell basename "$(CURDIR)")
 IMAGE=$(CURRENT_DIR_NAME):development
 CONTAINER=$(CURRENT_DIR_NAME).development
-HOST_PUBLIC_DIR=~/Desktop
+HOST_PUBLIC_DIR=~/code/public
 CONTAINER_PUBLIC_DIR=/public
 
 serve:
